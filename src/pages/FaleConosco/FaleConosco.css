@@ -1,0 +1,35 @@
+.div1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.fale-conosco-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.fale-conosco-div2 {
+  flex: 1;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}
+
+.alinhamento-texto {
+  text-align: center;
+}
+
+.alinhamento-div-titulo {
+  flex: 1;
+  padding: 20px;
+  margin: 20px;
+}
+
+.alinhamento-button-centro {
+  align-self: 'center'
+}
