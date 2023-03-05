@@ -1,27 +1,12 @@
-import React, {useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import api from '../../services/api'
+import { ProdutoContext } from "../../contexts/produtos/ProdutosContext";
 
 import Menu from "../../components/Menu";
-import { priceFormat } from "../../utils/priceFormat";
-
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const { produtos } = useContext(ProdutoContext)
 
   const navigate = useNavigate()
-
-  useEffect(() => {
-    api.get('/products')
-      .then((response) => {
-        setProducts(response.data.map((item) => {
-          return {
-            ...item,
-            priceFormatted: priceFormat(item.price)
-          }
-        }))
-      })
-      .catch(() => alert('Houve um erro ao buscar os produtos :('))
-  }, [])
 
   return (
     <div>
@@ -29,7 +14,7 @@ const Home = () => {
 
       <div className="main-container">
         <div className="products-list">
-          {products.map((product) => (
+          {produtos.map((product) => (
             <div data-testid="product-card" className="card" onClick={() => navigate('/details', { state: product })} key={product.id}  >
               <div className="card-content" datatest-id="card-product">
                 <h1>{product.name}</h1>

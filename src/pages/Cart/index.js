@@ -3,14 +3,12 @@ import { useContext } from 'react';
 import { FaMinusCircle, FaPlusCircle, FaTrashAlt } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Input from '../../components/Input';
 import Menu from '../../components/Menu';
-import { CartContext } from '../../contexts/CartContext';
+import { CartContext } from '../../contexts/cart/CartContext';
 
 const Cart = () => {
 
   const { cart, removeItem, changeItem, totalCart } = useContext(CartContext)
-
 
   const navigate = useNavigate();
 
@@ -73,7 +71,7 @@ const Cart = () => {
           </tbody>
         </table>
         <div className='footer-cart'>
-                  
+
 
           <h1>Total: {totalCart.totalFormatted}</h1>
 

@@ -4,12 +4,12 @@ import { useLocation } from "react-router-dom";
 
 
 import Menu from "../../components/Menu";
-import { CartContext } from "../../contexts/CartContext";
+import { CartContext } from "../../contexts/cart/CartContext";
 
 const Details = () => {
   const location = useLocation();
 
-  const {cart, addProduct} = useContext(CartContext)
+  const { cart, addProduct } = useContext(CartContext)
 
   const [observation, setObservation] = useState('');
 
@@ -59,7 +59,7 @@ const Details = () => {
             rows={5}
             value={observation}
             onChange={handleChangeTextarea}
-            >
+          >
           </textarea>
 
           <div className="controls">

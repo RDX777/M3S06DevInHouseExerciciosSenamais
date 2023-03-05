@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
-import { priceFormat } from "../utils/priceFormat";
+import { priceFormat } from "../../utils/priceFormat";
 
 export const CartContext = createContext({})
 
