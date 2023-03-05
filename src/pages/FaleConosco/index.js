@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FaleConosco.css';
 import Input from '../../components/Input';
 import TextArea from '../../components/TextArea';
 import Menu from '../../components/Menu'
+import api from '../../services/api'
 
 function FaleConosco() {
+
+
+  function salvaFaleConosco(dados) {
+    api.post('/faleconosco', dados).then((response) => {
+      alert("Salvo com sucesso")
+    }).catch((error) => {
+      alert(error);
+    })
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    salvaFaleConosco({
+      nome: event.target.nome.value,
+      email: event.target.email.value,
+      contato: event.target.contato.value,
+      mensagem: event.target.mensagem.value
+    });
+
+  }
+
   return (
     <div>
 
@@ -14,7 +36,7 @@ function FaleConosco() {
         <div className="fale-conosco-flex">
 
           <div className="fale-conosco-div2">
-            <form>
+            <form onSubmit={handleSubmit}>
 
               <div class>
                 <Input
@@ -25,6 +47,11 @@ function FaleConosco() {
                 <Input
                   name="email"
                   label="E-Mail:"
+                />
+
+                <Input
+                  name="contato"
+                  label="Contato"
                 />
 
                 <TextArea
@@ -44,8 +71,8 @@ function FaleConosco() {
             <p className="alinhamento-texto">Horário de Funcionamento: Seg-Sex, 9h-18h</p>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 
