@@ -23,9 +23,11 @@ function Order() {
   })
 
   const handleChange = (e) => {
-
-
     setOrder({ ...order, [e.target.name]: e.target.value })
+  }
+
+  function sendWhatsApp(texto) {
+    window.open('https://api.whatsapp.com/send?text='.concat(texto), '_blank');
   }
 
   const handleGetCep = () => {
@@ -136,7 +138,7 @@ function Order() {
             ]}
           />
 
-            {order.haveHashi}
+          {order.haveHashi}
 
           <RadioInput
             options={[
@@ -148,6 +150,8 @@ function Order() {
             onChange={handleChange}
             value={order.haveHashi}
           />
+
+          <input type={"button"} onClick={sendWhatsApp}> Envia whatsapp</input>
 
         </div>
 
