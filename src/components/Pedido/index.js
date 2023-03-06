@@ -18,7 +18,7 @@ function Pedido({ pedido }) {
         />
 
         <Label
-          labelTitle="Endereço:"
+          labelTitle="Endereço Cliente:"
           labelText={pedido.address}
         />
 
