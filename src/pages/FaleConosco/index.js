@@ -38,7 +38,7 @@ function FaleConosco() {
           <div className="fale-conosco-div2">
             <form onSubmit={handleSubmit}>
 
-              <div class>
+              <div>
                 <Input
                   name="nome"
                   label="Nome:"
@@ -51,7 +51,7 @@ function FaleConosco() {
 
                 <Input
                   name="contato"
-                  label="Contato"
+                  label="Contato Telefone:"
                 />
 
                 <TextArea

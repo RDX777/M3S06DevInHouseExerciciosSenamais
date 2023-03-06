@@ -35,7 +35,7 @@ const Menu = () => {
               value={text}
               onChange={handleChangeSearchInput}
               placeholder="O que deseja ?"
-              name="text"
+              name="text-search"
             />
           </div>
         )}
